@@ -1,23 +1,69 @@
-const getAllTasks = (req, res)=>{
-    console.log("all tasks")
+const TaskModel = require('../Modals/Task')
+
+const getAllTasks = async (req, res)=>{
+    try {
+    const allTasks = await TaskModel.find({})
+    res.status(200).json({allTasks})
+  } catch (error) {
+    res.status(500).json({ msg: error });
+  }
 };
 
-const createTask = (req, res)=>{
-    console.log('create task')
+const createTask = async (req, res)=>{
+
+  try {
+    const task = await TaskModel.create(req.body);
+    res.status(201).json({ task });
+  } catch (error) {
+    res.status(500).json({msg: error})
+  }
+    
 };
 
-const getTask = (req, res) => {
-  console.log("get single task");
+const getTask = async (req, res) => {
+  try {
+    const {id: TaskID} = req.params
+    const singleTask = await TaskModel.findOne({_id: TaskID})
+    res.status(200).json({singleTask})
+
+    if(!task){
+      return res.status(404).json({msg: `No task with id: ${TaskID}`})  
+    }
+  } catch (error) {
+    
+  }
 };
 
 
-const updateTask = (req, res) => {
-  console.log("update task");
+const updateTask = async (req, res) => {
+  try {
+    const {id: TaskID} = req.params
+    const {name, completed} = req.body
+    const updateTask = await TaskModel.findOneAndUpdate({_id: TaskID}, {name: name, completed: completed})
+    if(!updateTask){
+      res.status(201).json({msg: 'No task found with message ID'})
+    }
+    res.status(200).json({msg: "Task successfully updated"})
+  } catch (error) {
+    res.status(500).json("Internal Server Error")
+  }
 };
 
 
-const deleteTask = (req, res) => {
-  console.log("delete task");
+const deleteTask = async (req, res) => {
+  try {
+    const {id: TaskID} = req.params
+    const deleteTask = await TaskModel.findOneAndDelete({ _id: TaskID });
+    
+    if (!deleteTask) {
+      return res.status(404).json({ msg: "Task not found" });
+    }
+
+      res.status(200).json({ msg: "Task successfully deleted" });
+    
+  } catch (error) {
+    res.status(500).json({msg: error})
+  }
 };
 
 module.exports = {

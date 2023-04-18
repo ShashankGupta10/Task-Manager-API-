@@ -8,11 +8,13 @@ const tasks = require("./Routes/tasks");
 app.use(express.json());
 
 // ROUTES
-app.get("/hello", (req, res) => {
-  res.send("Hello World");
-});
 
 app.use("/api/v1/tasks", tasks);
+
+
+
+
+// STARTING THE SERVER
 
 
 const startServer = async ()=>{
