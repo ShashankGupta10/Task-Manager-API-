@@ -5,17 +5,15 @@ const tasks = require("./Routes/tasks");
 
 // MIDDLEWARES
 
+app.use(express.static('./public'));
 app.use(express.json());
+
 
 // ROUTES
 
 app.use("/api/v1/tasks", tasks);
 
-
-
-
 // STARTING THE SERVER
-
 
 const startServer = async ()=>{
 try {
@@ -29,6 +27,5 @@ try {
     console.log(error)
 }
 }
-
 
 startServer()

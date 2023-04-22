@@ -444,3 +444,50 @@ form > :last-child {
   text-align: center;
   margin-top: 1rem;
 }
+
+.card{
+  width: 150%;
+  display: block;
+  margin-left: -25%;
+
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: var(--white);
+  margin-top: 10%;
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-2);
+}
+
+.namee{
+  margin-left: 5%;
+}
+
+.status{
+  margin-left: 5%;
+}
+
+.edit1{
+  display: inline-block;
+  position: absolute;
+  left: 25%;
+  width: 100px;
+  padding: 0.3%;
+  border-radius: var(--borderRadius);
+  border: 0;
+  background-color: var(--primary-500);
+  color: white;
+
+}
+
+.del{
+  display: inline-block;
+  width: 100px;
+  padding: 0.7%;
+  margin-left: 25%;
+  border-radius: var(--borderRadius);
+  border: 0;
+  background-color: var(--primary-500);
+  color: white;
+  
+
+}
