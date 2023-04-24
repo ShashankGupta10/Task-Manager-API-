@@ -3,6 +3,8 @@ const express = require("express");
 const app = express();
 const tasks = require("./Routes/tasks");
 
+const port = process.env.PORT || 3001
+const connString = process.env.MONGO_DB_URI
 // MIDDLEWARES
 
 app.use(express.static('./public'));
@@ -17,10 +19,10 @@ app.use("/api/v1/tasks", tasks);
 
 const startServer = async ()=>{
 try {
-    await connectDB(process.env.MONGO_DB_URI)
+    await connectDB(connString)
     console.log('Database Connected...')
-    app.listen(3000, () => {
-      console.log("App listening on port 3000...");
+    app.listen(port, () => {
+      console.log(`App listening on port ${port}...`);
     });
 
 } catch (error) {
