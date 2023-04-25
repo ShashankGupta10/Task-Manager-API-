@@ -129,9 +129,7 @@ ul {
 a {
   text-decoration: none;
 }
-/*************
-     Buttons 
-*************/
+
 
 .btn {
   cursor: pointer;
@@ -169,9 +167,7 @@ button.block {
   width: 100%;
 }
 
-/*************
-     FORM 
-*************/
+
 form {
   width: 100%;
   background: var(--white);
@@ -252,7 +248,7 @@ form > :first-child {
 form > :last-child {
   margin-bottom: 0;
 }
-/* Basic Classes */
+
 .alert {
   padding: 0.375rem 0.75rem;
   margin-bottom: 1rem;
@@ -292,7 +288,7 @@ form > :last-child {
 .loading {
   margin: 0 auto;
 }
-/* form loading */
+
 
 .form-loading {
   position: relative;
@@ -322,9 +318,6 @@ form > :last-child {
   animation: spinner 0.6s linear infinite;
 }
 
-/*************
-     TASKS
-*************/
 .empty-list {
   text-align: center;
 }
@@ -397,10 +390,6 @@ form > :last-child {
   color: var(--red-dark);
 }
 
-/*************
-   SINGLE TASK
-*************/
-
 .single-task-form h4 {
   text-align: center;
 }
@@ -449,7 +438,6 @@ form > :last-child {
   width: 150%;
   display: block;
   margin-left: -25%;
-
   padding-top: 5%;
   padding-bottom: 5%;
   background-color: var(--white);
@@ -476,7 +464,6 @@ form > :last-child {
   border: 0;
   background-color: var(--primary-500);
   color: white;
-
 }
 
 .del{
@@ -488,6 +475,4 @@ form > :last-child {
   border: 0;
   background-color: var(--primary-500);
   color: white;
-  
-
 }

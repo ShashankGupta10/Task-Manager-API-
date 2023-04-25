@@ -4,6 +4,8 @@ const formDOM = document.querySelector(".task-form");
 const taskInputDOM = document.querySelector(".task-input");
 const formAlertDOM = document.querySelector(".form-alert");
 // Load tasks from /api/tasks
+
+
 const showTasks = async () => {
   loadingDOM.style.visibility = "visible";
   try {
@@ -13,41 +15,38 @@ const showTasks = async () => {
     if (finalres.length < 1) {
       tasksDOM.innerHTML = '<h5 class="empty-list">No tasks in your list</h5>';
       loadingDOM.style.visibility = "hidden";
-    } else {   
-      const taskListDOM = document.createElement('div');
-      taskListDOM.classList.add('task-list');
-      finalres.forEach(product => {
-        const productElement = document.createElement('div');
-        productElement.classList.add("card")
+    } else {
+      const taskListDOM = document.createElement("div");
+      taskListDOM.classList.add("task-list");
+      finalres.forEach((product) => {
+        const productElement = document.createElement("div");
+        productElement.classList.add("card");
 
-        if(product.completed){
-                  productElement.innerHTML = `
+        if (product.completed) {
+          productElement.innerHTML = `
           <h3 class= "namee"><del>${product.name}</del></h3>
           <button class = "edit1">EDIT</button>
           <button class = "del">DELETE</button>
         `;
-        }
-
-        else{
-                  productElement.innerHTML = `
+        } else {
+          productElement.innerHTML = `
           <h3 class= "namee">${product.name}</h3>
           <button class = "edit1">EDIT</button>
           <button class = "del">DELETE</button>
         `;
         }
 
-
-        productElement.addEventListener('click', () => {
+        productElement.addEventListener("click", () => {
           // When a product is clicked, get the object
           console.log(product);
         });
 
-        const edit1 = productElement.querySelector(".edit1")
-        edit1.addEventListener("click", ()=>{
-          console.log("clicked")
-          console.log(product._id)
+        const edit1 = productElement.querySelector(".edit1");
+        edit1.addEventListener("click", () => {
+          console.log("clicked");
+          console.log(product._id);
           window.location.href = `./task.html?id=${product._id}`;
-        })
+        });
 
         const delTask = productElement.querySelector(".del");
         delTask.addEventListener("click", async () => {
@@ -60,14 +59,14 @@ const showTasks = async () => {
         });
         taskListDOM.appendChild(productElement);
       });
-      tasksDOM.innerHTML = '';
+      tasksDOM.innerHTML = "";
       tasksDOM.appendChild(taskListDOM);
       loadingDOM.style.visibility = "hidden";
     }
-  } catch(err){
+  } catch (err) {
     console.log(err);
   }
-}
+};
 
 showTasks();
 // delete task
@@ -76,11 +75,11 @@ showTasks();
 formDOM.addEventListener("submit", async (e) => {
   e.preventDefault();
   const name = taskInputDOM.value;
-  console.log(name)
+  console.log(name);
 
   try {
-    await axios.post("/api/v1/tasks", {name: name, completed: false});
-    console.log("done")
+    await axios.post("/api/v1/tasks", { name: name, completed: false });
+    console.log("done");
     showTasks();
     taskInputDOM.value = "";
     formAlertDOM.style.display = "block";
@@ -91,8 +90,28 @@ formDOM.addEventListener("submit", async (e) => {
     formAlertDOM.innerHTML = `error, please try again`;
   }
 
+
   setTimeout(() => {
     formAlertDOM.style.display = "none";
     formAlertDOM.classList.remove("text-success");
   }, 3000);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,15 +1,13 @@
-const mongoose = require('mongoose')
-require('dotenv').config()
+const mongoose = require("mongoose");
+require("dotenv").config();
 
-
-const connectDB = (url)=>{
-    return mongoose.connect(url, {
+const connectDB = (url) => {
+  return mongoose.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
-    useFindAndModify: false
+    useFindAndModify: false,
+  });
+};
 
-})
-}
-
-module.exports = connectDB
+module.exports = connectDB;
