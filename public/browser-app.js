@@ -5,7 +5,6 @@ const taskInputDOM = document.querySelector(".task-input");
 const formAlertDOM = document.querySelector(".form-alert");
 // Load tasks from /api/tasks
 
-
 const showTasks = async () => {
   loadingDOM.style.visibility = "visible";
   try {
@@ -90,28 +89,8 @@ formDOM.addEventListener("submit", async (e) => {
     formAlertDOM.innerHTML = `error, please try again`;
   }
 
-
   setTimeout(() => {
     formAlertDOM.style.display = "none";
     formAlertDOM.classList.remove("text-success");
   }, 3000);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

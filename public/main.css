@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400|Inconsolata:400');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400|Inconsolata:400");
 *,
 ::after,
 ::before {
@@ -45,8 +45,8 @@
   --green-dark: #0f5132;
 
   /* typography */
-  --headingFont: 'Inconsolata', monospace;
-  --bodyFont: 'Montserrat', sans-serif;
+  --headingFont: "Inconsolata", monospace;
+  --bodyFont: "Montserrat", sans-serif;
   --smallText: 0.7em;
   /* rest */
   --backgroundColor: var(--grey-50);
@@ -130,7 +130,6 @@ a {
   text-decoration: none;
 }
 
-
 .btn {
   cursor: pointer;
   appearance: none;
@@ -166,7 +165,6 @@ button.hipster:hover {
 button.block {
   width: 100%;
 }
-
 
 form {
   width: 100%;
@@ -289,14 +287,13 @@ form > :last-child {
   margin: 0 auto;
 }
 
-
 .form-loading {
   position: relative;
 }
 .form-loading::before {
   background: var(--white);
   position: absolute;
-  content: '';
+  content: "";
   height: 100%;
   width: 100%;
   top: 0;
@@ -306,7 +303,7 @@ form > :last-child {
 }
 
 .form-loading::after {
-  content: '';
+  content: "";
   position: absolute;
   top: calc(50% - 3rem);
   left: calc(50% - 3rem);
@@ -434,7 +431,7 @@ form > :last-child {
   margin-top: 1rem;
 }
 
-.card{
+.card {
   width: 150%;
   display: block;
   margin-left: -25%;
@@ -446,15 +443,15 @@ form > :last-child {
   box-shadow: var(--shadow-2);
 }
 
-.namee{
+.namee {
   margin-left: 5%;
 }
 
-.status{
+.status {
   margin-left: 5%;
 }
 
-.edit1{
+.edit1 {
   display: inline-block;
   position: absolute;
   left: 25%;
@@ -466,7 +463,7 @@ form > :last-child {
   color: white;
 }
 
-.del{
+.del {
   display: inline-block;
   width: 100px;
   padding: 0.7%;
